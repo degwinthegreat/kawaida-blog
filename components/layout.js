@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import TwitterIcon from '@material-ui/icons/Twitter'
 
 const name = 'Shinsuke Kawaida'
 export const siteTitle = 'Kawaida Blog'
@@ -34,7 +35,7 @@ export default function Layout({ children, home }) {
               src="/images/profile.jpg"
               alt={name}
             />
-            <h1>{name}</h1>
+            <h1>{name} <a href="https://twitter.com/tamamushi_2"><TwitterIcon /></a></h1>
           </>
         ) : (
           <>
