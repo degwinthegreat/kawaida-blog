@@ -1,8 +1,9 @@
 import Head from 'next/head'
-import Layout, { siteTitle } from '../components/layout'
-import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
+import { getSortedPostsData } from '../lib/posts'
+import Layout, { siteTitle } from '../components/layout'
 import Date from '../components/date'
+import { Box, Grid, Typography } from '@material-ui/core'
 
 export default function Home({ allPostsData }) {
   return (
@@ -10,17 +11,13 @@ export default function Home({ allPostsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section>
-        <p>
-          Hello, I’m <strong>Kawaida</strong>. I’m a software engineer. You can contact me on{' '}
-        </p>
-        <p>
-          (This is a sample website - you’ll be building a site like this in{' '}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
-      </section>
-      <section>
-        <h2>Blog</h2>
+      <Grid
+        container
+        item
+        direction='column'
+        xs={12} md={10}
+      >
+        <Typography variant='h2'>Blog</Typography>
         <ul>
           {allPostsData.map(({ id, date, title }) => (
             <li key={id}>
@@ -34,7 +31,7 @@ export default function Home({ allPostsData }) {
             </li>
           ))}
         </ul>
-      </section>
+      </Grid>
     </Layout>
   )
 }

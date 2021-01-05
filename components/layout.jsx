@@ -1,13 +1,27 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import TwitterIcon from '@material-ui/icons/Twitter'
+import { makeStyles } from '@material-ui/core/styles';
+import { Grid } from '@material-ui/core'
+import "@fontsource/roboto/300.css"
+import Header from './header'
+import Sidebar from './sidebar'
 
-const name = 'Shinsuke Kawaida'
 export const siteTitle = 'Kawaida Blog'
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  main: {
+    padding: theme.spacing(2),
+  },
+}));
+
 export default function Layout({ children, home }) {
+const classes = useStyles();
+
   return (
-    <div>
+    <div className={classes.root}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -27,35 +41,18 @@ export default function Layout({ children, home }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header>
-
-        {home ? (
-          <>
-            <img
-              src="/images/profile.jpg"
-              alt={name}
-            />
-            <h1>{name} <a href="https://twitter.com/tamamushi_2"><TwitterIcon /></a></h1>
-          </>
-        ) : (
-          <>
-            <Link href="/">
-              <a>
-                <img
-                  src="/images/profile.jpg"
-                  alt={name}
-                />
-              </a>
-            </Link>
-            <h2>
-              <Link href="/">
-                <a>{name}</a>
-              </Link>
-            </h2>
-          </>
-        )}
-      </header>
-      <main>{children}</main>
+      <Header title={siteTitle}/>
+      <main>
+        <Grid
+          container
+          direction="row"
+          justify="space-between"
+          className={classes.main}
+        >
+          {children}
+          <Sidebar />
+        </Grid>
+      </main>
       {!home && (
         <div>
           <Link href="/">
