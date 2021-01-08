@@ -1,7 +1,8 @@
-import Layout from '../../components/layout'
-import { getAllPostIds, getPostData } from '../../lib/posts'
-import Head from 'next/head'
-import Date from '../../components/date'
+import Head from "next/head";
+import { getAllPostIds, getPostData } from "../../lib/posts";
+import Date from "../../components/date";
+import Layout from "../../components/layout";
+import { Typography } from "@material-ui/core";
 
 export default function Post({ postData }) {
   return (
@@ -10,29 +11,31 @@ export default function Post({ postData }) {
         <title>{postData.title}</title>
       </Head>
       <article>
-        <h1></h1>
+        <Typography variant="h2" component="h1">
+          {postData.title}
+        </Typography>
         <div>
           <Date dateString={postData.date} />
         </div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
     </Layout>
-  )
+  );
 }
 
 export async function getStaticPaths() {
-  const paths = getAllPostIds()
+  const paths = getAllPostIds();
   return {
     paths,
-    fallback: false
-  }
+    fallback: false,
+  };
 }
 
 export async function getStaticProps({ params }) {
-  const postData = await getPostData(params.id)
+  const postData = await getPostData(params.id);
   return {
     props: {
-      postData
-    }
-  }
+      postData,
+    },
+  };
 }

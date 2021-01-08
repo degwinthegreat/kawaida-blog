@@ -1,5 +1,4 @@
-import { Container } from '@material-ui/core'
-import CssBaseline from '@material-ui/core/CssBaseline';
+import CssBaseline from "@material-ui/core/CssBaseline";
 
 export default function App({ Component, pageProps }) {
   return (
@@ -8,5 +7,5 @@ export default function App({ Component, pageProps }) {
       <CssBaseline />
       <Component {...pageProps} />
     </>
-  )
+  );
 }

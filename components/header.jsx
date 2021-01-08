@@ -6,8 +6,12 @@ export default function Header(props) {
   return (
     <AppBar position="static" color="inherit">
       <Toolbar component="nav" variant="dense">
-        <Link href="/">
-          <a>
+        <Link
+          href="/"
+        >
+          <a
+            style={{ color: 'black', textDecoration: 'none' }}
+          >
             <Typography variant="h6">
               {title}
             </Typography>

@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Link from 'next/link'
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid } from '@material-ui/core'
 import "@fontsource/roboto/300.css"
@@ -13,8 +12,11 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   main: {
-    padding: theme.spacing(2),
+    padding: '24px',
   },
+  children: {
+    marginRight: theme.spacing(10),
+  }
 }));
 
 export default function Layout({ children, home }) {
@@ -46,20 +48,21 @@ const classes = useStyles();
         <Grid
           container
           direction="row"
-          justify="space-between"
+          justify="center"
           className={classes.main}
         >
-          {children}
+          <Grid
+            container
+            item
+            direction='column'
+            xs={12} md={6}
+            className={classes.children}
+          >
+            {children}
+          </Grid>
           <Sidebar />
         </Grid>
       </main>
-      {!home && (
-        <div>
-          <Link href="/">
-            <a>← Back to home</a>
-          </Link>
-        </div>
-      )}
     </div>
   )
 }
