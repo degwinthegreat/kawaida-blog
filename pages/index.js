@@ -3,7 +3,6 @@ import Link from "next/link";
 import { getSortedPostsData } from "../lib/posts";
 import Layout, { siteTitle } from "../components/layout";
 import Date from "../components/date";
-import { Typography } from "@material-ui/core";
 
 export default function Home({ allPostsData }) {
   return (
@@ -11,7 +10,6 @@ export default function Home({ allPostsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <Typography variant="h2">Blog</Typography>
       <ul>
         {allPostsData.map(({ id, date, title }) => (
           <li key={id}>

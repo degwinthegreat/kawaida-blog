@@ -1,6 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { Avatar, Grid, Typography } from '@material-ui/core'
+import { Avatar, Divider, Grid, Typography } from '@material-ui/core'
 import TwitterIcon from '@material-ui/icons/Twitter'
+import FacebookIcon from '@material-ui/icons/Facebook'
 import GitHubIcon from '@material-ui/icons/GitHub'
 
 const useStyles = makeStyles((theme) => ({
@@ -14,8 +15,8 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: 'none',
   },
   snsIcon: {
-    width: theme.spacing(3),
-    height: theme.spacing(3),
+    width: theme.spacing(3.2),
+    height: theme.spacing(3.2),
   },
   snsAvatar: {
     backgroundColor: 'black',
@@ -46,16 +47,22 @@ export default function Sidebar() {
           alt='tamamushi icon'
         />
       </Grid>
+      <Divider />
       <Grid
         item
         xs={12}
       >
+        <Divider light={true} />
         <Typography variant="subtitle2">
-          Software Engineer MedPeer,Inc
+          雑に書いていきたい。
         </Typography>
         <Typography variant="subtitle2">
-          Ruby / Rails / Vue.js / DIVEINTOCODE / ex. farmer / sauna / bouldering
+          Software Engineer<br />
+          Ruby / Rails / Vue / React<br />
+          ex. farmer / DIVEINTOCODE<br />
+          sauna / bouldering<br />
         </Typography>
+        <Divider light={true} />
       </Grid>
       <Grid
         container
@@ -66,6 +73,9 @@ export default function Sidebar() {
       >
         <a href="https://twitter.com/tamamushi_2" className={classes.snsLink} >
           <TwitterIcon className={classes.snsIcon}/>
+        </a>
+        <a href="https://www.facebook.com/shinsukekawaida/" className={classes.snsLink} >
+          <FacebookIcon className={classes.snsIcon} />
         </a>
         <a href="https://github.com/degwinthegreat" className={classes.snsLink} >
           <GitHubIcon className={classes.snsIcon} />

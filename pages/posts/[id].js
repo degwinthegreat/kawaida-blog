@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import Date from "../../components/date";
 import Layout from "../../components/layout";
@@ -19,6 +20,9 @@ export default function Post({ postData }) {
         </div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
+      <Link href="/">
+        <a>← トップに戻る</a>
+      </Link>
     </Layout>
   );
 }

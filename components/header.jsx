@@ -1,23 +1,32 @@
 import Link from 'next/link'
-import { AppBar, Toolbar, Typography } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core/styles';
+import { Container, Typography } from '@material-ui/core'
+
+const useStyles = makeStyles((theme) => ({
+  header: {
+    margin: '0 auto',
+    textAlign: 'center',
+  },
+  title: {
+    margin: theme.spacing(5),
+  },
+}));
 
 export default function Header(props) {
   const { title } = props;
+  const classes = useStyles();
+
   return (
-    <AppBar position="static" color="inherit">
-      <Toolbar component="nav" variant="dense">
-        <Link
-          href="/"
+    <Container className={classes.header}>
+      <Link href="/">
+        <a
+          style={{ color: 'black', textDecoration: 'none' }}
         >
-          <a
-            style={{ color: 'black', textDecoration: 'none' }}
-          >
-            <Typography variant="h6">
-              {title}
-            </Typography>
-          </a>
-        </Link>
-      </Toolbar>
-    </AppBar>
+          <Typography variant="h2" component="h1" className={classes.title}>
+            {title}
+          </Typography>
+        </a>
+      </Link>
+    </Container>
   )
 }
