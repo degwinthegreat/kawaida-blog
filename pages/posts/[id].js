@@ -4,6 +4,7 @@ import { getAllPostIds, getPostData } from "../../lib/posts";
 import Date from "../../components/date";
 import Layout from "../../components/layout";
 import { Typography } from "@material-ui/core";
+import "highlight.js/styles/dark.css"
 
 export default function Post({ postData }) {
   return (
