@@ -67,7 +67,7 @@ export default function Sidebar() {
       <Grid
         container
         direction="row"
-        justify="space-between"
+        justifyContent="space-between"
         item
         xs={12}
       >

@@ -48,7 +48,7 @@ const classes = useStyles();
         <Grid
           container
           direction="row"
-          justify="center"
+          justifyContent="center"
           className={classes.main}
         >
           <Grid
