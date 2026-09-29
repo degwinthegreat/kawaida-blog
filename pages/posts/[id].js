@@ -3,27 +3,31 @@ import Link from "next/link";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import Date from "../../components/date";
 import Layout from "../../components/layout";
-import { Typography } from "@material-ui/core";
 import "highlight.js/styles/dark.css";
 
 export default function Post({ postData }) {
   return (
     <Layout>
       <Head>
-        <title>{postData.title}</title>
+        <title>{postData.title} | Shinsuke Kawaida</title>
+        <meta
+          name="description"
+          content={`${postData.title} — Shinsuke Kawaida`}
+        />
       </Head>
-      <article>
-        <Typography variant="h2" component="h1">
-          {postData.title}
-        </Typography>
-        <div>
+      <article className="post">
+        <p className="back-link">
+          <Link href="/">← Home</Link>
+        </p>
+        <h1>{postData.title}</h1>
+        <div className="post-date">
           <Date dateString={postData.date} />
         </div>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <div
+          className="post-body"
+          dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
+        />
       </article>
-      <Link href="/">
-        <a>← トップに戻る</a>
-      </Link>
     </Layout>
   );
 }

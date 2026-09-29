@@ -1,11 +1,5 @@
-import CssBaseline from "@material-ui/core/CssBaseline";
+import "../styles/globals.css";
 
 export default function App({ Component, pageProps }) {
-  return (
-    <>
-      {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-      <CssBaseline />
-      <Component {...pageProps} />
-    </>
-  );
+  return <Component {...pageProps} />;
 }

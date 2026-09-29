@@ -1,68 +1,48 @@
-import Head from 'next/head'
-import { makeStyles } from '@material-ui/core/styles';
-import { Grid } from '@material-ui/core'
-import "@fontsource/roboto/300.css"
-import Header from './header'
-import Sidebar from './sidebar'
+import Head from "next/head";
+import Link from "next/link";
 
-export const siteTitle = 'Kawaida Blog'
+export const siteTitle = "Shinsuke Kawaida";
+export const siteDescription = "高知を拠点にWebプロダクトを開発するソフトウェアエンジニア、川井田慎介の個人サイト。";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  main: {
-    padding: '24px',
-  },
-  children: {
-    marginRight: theme.spacing(10),
-  }
-}));
-
-export default function Layout({ children, home }) {
-const classes = useStyles();
-
+export default function Layout({ children }) {
   return (
-    <div className={classes.root}>
+    <>
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=device-width"
-        />
-        <meta
-          name="description"
-          content="Learn how to build a personal website using Next.js"
-        />
-        <meta
-          property="og:image"
-          content={`https://og-image.now.sh/${encodeURI(
-            siteTitle
-          )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.zeit.co%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
-        />
-        <meta name="og:title" content={siteTitle} />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="description" content={siteDescription} />
+        <meta property="og:title" content={siteTitle} />
+        <meta property="og:description" content={siteDescription} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://kawaida-blog.vercel.app/" />
+        <meta name="twitter:card" content="summary" />
       </Head>
-      <Header title={siteTitle}/>
-      <main>
-        <Grid
-          container
-          direction="row"
-          justifyContent="center"
-          className={classes.main}
-        >
-          <Grid
-            container
-            item
-            direction='column'
-            xs={12} md={6}
-            className={classes.children}
-          >
-            {children}
-          </Grid>
-          <Sidebar />
-        </Grid>
-      </main>
-    </div>
-  )
+
+      <div className="site-shell">
+        <header className="site-header">
+          <Link href="/" className="site-name">
+            Shinsuke Kawaida
+          </Link>
+          <nav aria-label="メインナビゲーション">
+            <Link href="/#work">Work</Link>
+            <Link href="/#writing">Writing</Link>
+            <Link href="/#about">About</Link>
+            <Link href="/#disclosure">Disclosure</Link>
+          </nav>
+        </header>
+
+        <main>{children}</main>
+
+        <footer className="site-footer">
+          <span>© {new Date().getFullYear()} Shinsuke Kawaida</span>
+          <span>
+            <a href="https://github.com/degwinthegreat">GitHub</a>
+            {" / "}
+            <a href="https://zenn.dev/degwinthegreat">Zenn</a>
+            {" / "}
+            <a href="https://qiita.com/degwinthegreat">Qiita</a>
+          </span>
+        </footer>
+      </div>
+    </>
+  );
 }
