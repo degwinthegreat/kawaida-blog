@@ -7,22 +7,19 @@ import Date from "../components/date";
 
 const publicWork = [
   {
-    title: "Kubernetes learning lab",
-    href: "https://github.com/degwinthegreat/k8s_learning",
-    description:
-      "Kubernetesを手を動かしながら理解するための、TypeScriptを使った学習リポジトリ。",
-  },
-  {
-    title: "Rails on Cloud Run",
-    href: "https://github.com/degwinthegreat/rails_cloud_run_sample",
-    description:
-      "Ruby on RailsアプリケーションをCloud Runで動かすための実装サンプル。",
-  },
-  {
-    title: "Public repositories",
+    title: "Code",
     href: "https://github.com/degwinthegreat?tab=repositories",
-    description:
-      "Rails、Go、TypeScript、Kubernetes、ISUCONを中心とした実験と学習の記録。",
+    description: "systems, experiments, and unfinished questions.",
+  },
+  {
+    title: "Notes",
+    href: "https://zenn.dev/degwinthegreat",
+    description: "things that became clear enough to write down.",
+  },
+  {
+    title: "Archive",
+    href: "https://qiita.com/degwinthegreat",
+    description: "older attempts, kept where they landed.",
   },
 ];
 
@@ -41,11 +38,10 @@ export default function Home({ allPostsData }) {
           height="112"
           alt="Shinsuke Kawaidaのアイコン"
         />
-        <p className="eyebrow">Software Engineer · Kochi, Japan</p>
+        <p className="eyebrow">Kochi, Japan</p>
         <h1 id="intro-title">Shinsuke Kawaida</h1>
         <p className="lead">
-          Webプロダクトをつくるソフトウェアエンジニアです。 Ruby on
-          Railsを軸に、TypeScript、Go、クラウド基盤まで扱います。
+          ソフトウェアをつくっています。変化しても意味を失わず、誰も見ていない間も静かに動き続けるものに興味があります。
         </p>
         <p className="links">
           <a href="https://github.com/degwinthegreat">GitHub</a>
@@ -59,24 +55,18 @@ export default function Home({ allPostsData }) {
       </section>
 
       <section aria-labelledby="interests-title">
-        <h2 id="interests-title">Professional interests</h2>
+        <h2 id="interests-title">Questions</h2>
         <p>
-          変更しやすく、長く運用できるWebアプリケーションの設計と開発に関心があります。
-          現在は、AIエージェントがソフトウェア開発をどう変えるか、また少ない運用負荷で継続的に価値を届ける仕組みを探っています。
-        </p>
-        <p>
-          日々の仕事では
-          <a href="https://smarthr.co.jp/">SmartHR</a>
-          のソフトウェア開発に携わっています。このサイトの内容は個人の見解です。
+          人とソフトウェアの境界、道具が仕事の形を変える瞬間、複雑な仕組みが単純に見えるまでの過程。そのあたりを行き来しながら、プロダクトをつくっています。
         </p>
         <p className="current-focus">
-          <strong>Current focus:</strong> AI-assisted software development,
-          developer tooling, and low-maintenance software products.
+          <strong>Current focus:</strong> systems that keep working when no one
+          is watching.
         </p>
       </section>
 
       <section id="work" aria-labelledby="work-title">
-        <h2 id="work-title">Selected public work</h2>
+        <h2 id="work-title">Traces</h2>
         <ul className="item-list">
           {publicWork.map((item) => (
             <li key={item.href}>
@@ -90,7 +80,7 @@ export default function Home({ allPostsData }) {
       <section id="writing" aria-labelledby="writing-title">
         <h2 id="writing-title">Writing</h2>
         <p>
-          過去の記事も残しながら、技術的な実験と、その結果から考えたことをここに記録していきます。
+          ときどき、考えていたことが言葉になります。古いものも、そのまま残しています。
         </p>
         <ul className="item-list writing-list">
           {allPostsData.map(({ id, date, title }) => (
@@ -107,15 +97,14 @@ export default function Home({ allPostsData }) {
       <section id="about" aria-labelledby="about-title">
         <h2 id="about-title">About</h2>
         <p>
-          高知在住。農業からソフトウェアエンジニアに転身しました。仕事以外では、サウナとボルダリングが好きです。
+          以前は土に触れる仕事をしていました。今はソフトウェアを育てています。熱い場所と、登るための壁が好きです。
         </p>
       </section>
 
       <section id="disclosure" aria-labelledby="disclosure-title">
-        <h2 id="disclosure-title">Disclosure</h2>
+        <h2 id="disclosure-title">Biases</h2>
         <p>
-          このサイトの文章と評価に最終的な責任を持つのは私です。AIを調査、推敲、実装の補助に使う場合があります。
-          将来、広告・アフィリエイト・スポンサーを利用する場合は、対象ページで明示し、編集上の評価と分離します。
+          AIを調査や制作の道具として使います。ここに残す判断の責任は私にあります。商業的な関係がある場合は、それが意味を持つ場所で明示します。
         </p>
       </section>
     </Layout>

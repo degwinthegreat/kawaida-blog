@@ -23,10 +23,10 @@ export default function Layout({ children }) {
             Shinsuke Kawaida
           </Link>
           <nav aria-label="メインナビゲーション">
-            <Link href="/#work">Work</Link>
+            <Link href="/#work">Traces</Link>
             <Link href="/#writing">Writing</Link>
             <Link href="/#about">About</Link>
-            <Link href="/#disclosure">Disclosure</Link>
+            <Link href="/#disclosure">Biases</Link>
           </nav>
         </header>
 
