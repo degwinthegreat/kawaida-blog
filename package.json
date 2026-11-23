@@ -13,22 +13,22 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "date-fns": "^2.28.0",
+    "date-fns": "^4.4.0",
     "gray-matter": "^4.0.3",
-    "highlight.js": "^11.4.0",
-    "next": "^16.0.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "rehype-highlight": "^5.0.2",
-    "rehype-stringify": "^9.0.3",
-    "remark-parse": "^10.0.1",
-    "remark-rehype": "^10.1.0",
-    "unified": "^10.1.1"
+    "highlight.js": "^11.12.0",
+    "next": "^16.4.6",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "rehype-highlight": "^7.0.2",
+    "rehype-stringify": "^10.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.2",
+    "unified": "^11.0.5"
   },
   "devDependencies": {
     "eslint": "^9.0.0",
-    "eslint-config-next": "^16.0.0",
-    "eslint-config-prettier": "^10.0.0",
-    "prettier": "^3.0.0"
+    "eslint-config-next": "^16.4.6",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.10.1"
   }
 }
