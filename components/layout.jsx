@@ -33,6 +33,8 @@ export default function Layout({ children }) {
         <main>{children}</main>
 
         <footer className="site-footer">
+          {/* ビルド時に静的生成される年表示。 */}
+          {/* oxlint-disable-next-line react/purity */}
           <span>© {new Date().getFullYear()} Shinsuke Kawaida</span>
           <span>
             <a href="https://github.com/degwinthegreat">GitHub</a>
